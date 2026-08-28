@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2A3438 transparent;
+}
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb { background: #2A3438; border-radius: 8px; }
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-graphite-950 text-mist-100 font-body antialiased;
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(245,166,35,0.06), transparent 40%),
+    radial-gradient(circle at 85% 20%, rgba(45,212,191,0.05), transparent 45%);
+  background-attachment: fixed;
+}
+
+.font-display { font-family: 'Sora', sans-serif; }
+.font-mono-num { font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+
+:focus-visible {
+  outline: 2px solid #F5A623;
+  outline-offset: 2px;
+}
+
+.panel {
+  @apply bg-graphite-850 border border-graphite-700 rounded-2xl shadow-panel;
+}
+
+.demo-badge {
+  @apply inline-flex items-center gap-1.5 text-[11px] font-medium tracking-wide uppercase text-amber-400 bg-amber-500/10 border border-amber-500/25 rounded-full px-2.5 py-1;
+}
+
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
