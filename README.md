@@ -77,7 +77,7 @@ Create a `.env.local` file in the project root:
 
 ```bash
 VITE_GROQ_API_KEY=your_groq_api_key
-VITE_GROQ_MODEL=llama-3.3-70b-versatile
+VITE_GROQ_MODEL=openai/gpt-oss-20b
 ```
 
 Restart Vite after changing environment variables. The chatbot will use Groq for questions, and the Recommendations page will enable **Generate with Groq**. Without a key, the app keeps its local demo responder and recommendations. This direct browser integration is suitable for a demo only; production should proxy Groq through a backend so the API key is never exposed to users.
